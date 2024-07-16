@@ -44,7 +44,7 @@ public without sharing class DemoDateShifter {
         DateShifterSettings dsSettings = new DateShifterSettings();
 
         if (savedSettings.Object_API_Name__c == null) {
-            dsSettings.settingsFound = false;
+            dsSettings.settingsFound = false; //retaining the actual value
             dsSettings.objectApiNameIsValid = false;
             dsSettings.fieldApiNameIsValid = false;
         } else {
