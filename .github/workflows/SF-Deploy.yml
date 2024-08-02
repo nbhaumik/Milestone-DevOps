@@ -22,13 +22,13 @@ jobs:
         run: npm install sfdx-cli --global
 
       - name: Authorize SF Org
-        run: sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8MP29DTE5kxVLMJqbiQ7lPZx_gPv.U2zKJZEhHTv31VPYvHcWNTfW_.CjVLA --jwtkeyfile ./buildfiles/server1.key --username navoniloy.bhaumik@milestone.tech.dev --instanceurl https://milestone-main--dev.sandbox.my.salesforce.com -a Dev
+        run: sfdx force:auth:jwt:grant --clientid 3MVG9BriLgWNwNOSNV9MyNQCx8MP29DTE5kxVLMJqbiQ7lPZx_gPv.U2zKJZEhHTv31VPYvHcWNTfW_.CjVLA --jwtkeyfile ./buildfiles/server1.key --username navoniloy.bhaumik@milestone.tech.dev --instanceurl https://milestone-main--dev.sandbox.my.salesforce.com -a Dev1
 
       - name: Convert to Deploy Source
         run: sfdx force:source:convert -r ./force-app -d ./toDeploy
 
       - name: Run Validation on Deploy Source
-        run: sfdx force:source:deploy -c -x manifest/package.xml -u Dev
+        run: sfdx force:source:deploy -c -x manifest/package.xml -u Dev1
 
       - name: Deploy to SF Org
-        run: sfdx force:source:deploy -x manifest/package.xml -u Dev
+        run: sfdx force:source:deploy -x manifest/package.xml -u Dev1
